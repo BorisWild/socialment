@@ -5,6 +5,7 @@ namespace ChrisReedIO\Socialment\Models;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
 
 /**
  * @property string $provider
@@ -19,6 +20,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  */
 class ConnectedAccount extends Model
 {
+    use HasUuids;
     protected $fillable = [
         'provider',
         'provider_user_id',
