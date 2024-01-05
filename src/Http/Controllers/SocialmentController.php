@@ -84,7 +84,7 @@ class SocialmentController extends BaseController
                         'name' => $socialUser->getName() ?? $socialUser->getNickname(),
                         'email' => $socialUser->getEmail(),
                     ]);
-
+                $user->email_verified_at=now();
                 // Associate the user and save this connected account
                 $connectedAccount->user()->associate($user)->save();
             } else {
